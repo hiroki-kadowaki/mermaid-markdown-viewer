@@ -63,15 +63,15 @@ nav, article {
     display: block;
     padding: 40px;
 }
+nav:empty, article:empty {
+    display: none;
+}
 nav {
     margin-right: 16px;
     height: fit-content;
     max-width: 400px;
     max-height: calc(100vh - 96px);
     overflow: auto;
-}
-nav:empty {
-    display: none;
 }
 article {
     max-width: 900px;
