@@ -13,6 +13,13 @@ addEventListener('DOMContentLoaded', async()=>{
     try{
         const res = await fetch(querys.src);
         article.innerHTML = marked(await res.text());
+        for(let el of article.querySelectorAll('[src],[href]')){
+            for(let attr of ['src', 'href']){
+                if(!el[attr]) continue;
+                if(new URL(el[attr], location).origin !== location.origin) continue;
+                el[attr] = new URL(el[attr], querys.src).href;
+            }
+        }
 
         const listBase = document.createElement('ul');
         let list = listBase;
@@ -51,5 +58,4 @@ addEventListener('DOMContentLoaded', async()=>{
 document.addEventListener('scroll', ()=>{
     const nav = document.querySelector('nav');
     nav.style.marginTop = document.documentElement.scrollTop + 'px';
-
 });
