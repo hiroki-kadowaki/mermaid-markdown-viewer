@@ -5,7 +5,7 @@ location.search.slice(1).split('&').forEach(p=>{
 });
 
 addEventListener('DOMContentLoaded', async()=>{
-    document.forms[0].src.value = querys.src;
+    document.forms[0].src.value = querys.src || '';
     if(!querys.src) return;
 
     const nav = document.querySelector('nav');
