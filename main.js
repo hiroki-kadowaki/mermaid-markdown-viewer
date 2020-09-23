@@ -50,6 +50,7 @@ addEventListener('DOMContentLoaded', async()=>{
         }
 
         if(listBase.children.length) nav.appendChild(listBase);
+        mermaid.init(null, '.language-mermaid');
     }catch(err){
         article.innerHTML = `<i>${err.message}</i>`;
     }

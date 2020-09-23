@@ -73,6 +73,3 @@ nav {
     max-height: calc(100vh - 96px);
     overflow: auto;
 }
-article {
-    max-width: 900px;
-}
