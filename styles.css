@@ -73,3 +73,7 @@ nav {
     max-height: calc(100vh - 96px);
     overflow: auto;
 }
+article {
+    flex-grow: 1;
+    max-width: 1200px;
+}
