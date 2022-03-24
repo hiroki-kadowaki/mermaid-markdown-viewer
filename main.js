@@ -12,7 +12,8 @@ addEventListener('DOMContentLoaded', async()=>{
     const article = document.querySelector('article');
     try{
         const res = await fetch(querys.src);
-        article.innerHTML = marked(await res.text());
+        const markdownText = await res.text();
+        article.innerHTML = marked.parse(markdownText);
         for(let el of article.querySelectorAll('[src],[href]')){
             for(let attr of ['src', 'href']){
                 if(!el[attr]) continue;
